@@ -1,0 +1,30 @@
+.c-button-content{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2.4rem;
+}
+
+.c-button{
+  width: 48%;
+  height: 4rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border: 2px solid #0D2840;
+}
+
+.c-button--create{
+  background-color: #0D2840;
+  color: #f2f2f2;
+}
+
+.c-button--create:hover{
+  background-color: #2ABF95;
+  color: #0D2840;
+  transition: 0.8s;
+}
+
+.c-button--copy:hover{
+  background-color: #79D0F2;
+  border: 2px solid #79D0F2;
+  transition: 0.8s;
+}

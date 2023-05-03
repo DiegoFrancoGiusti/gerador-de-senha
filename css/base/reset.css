@@ -2,18 +2,20 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  color: #0D2840;
 }
 
 html{
   font-family: 'Roboto Mono', monospace;
+  font-size: 62.5%;
+  color: #0D2840;
 }
 
 body{
+  width: 100%;
   min-height: 100vh;
-}
-
-h1{
-  font-weight: 500;
-  padding: 0px;
-  margin: 0px;
+  background-color: #F2F2F2;
 }

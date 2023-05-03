@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Gerador de senha</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Diego Franco Giusti Modesto da Silva">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Gerador de senha</title>
 </head>
 <body>
-    <h1>Gerador de Senha</h1>
+  <main class="l-container">
+    <div class="c-logo">
+      <h1>
+        <img src="img/senha-img.jpg" class="c-logo__img" alt="Imagem de uma senha com cadeado">
+      </h1>
+      <h2 class="c-logo__text">Gerador de Senha</h2>
+    </div>
+
+    <form class="c-form"> 
+      <div class="c-form__content">
+        <label for="generatedPass" class="c-form__input-info">Senha gerada</label>
+        <input class="c-form__input" type="text" id="generatedPass" name="generatedPass">
+      </div>
+      
+      <div class="c-form__content">
+        <label class="c-form__input-info" for="passwordLength">Tamanho da senha: <span class="passLength">5</span> caracters</label>
+        <input class="c-form__input" type="range" min="5" max="30" id="passwordLength" name="passwordLength">
+      </div>
+
+      <div class="c-form__content">
+        <label class="c-form__input-info">A senha deve conter:</label>
+        <ul class="c-form__checkList">
+          <li><input class="c-form__input" id="input-lowerCase" type="checkbox" checked>Minúsculas<span class="c-form__check-info">(a-z)</span></li>
+          <li><input class="c-form__input" id="input-upperCase" type="checkbox">Maíuscula<span class="c-form__check-info">(A-Z)</span></li>
+          <li><input class="c-form__input" id="input-number" type="checkbox">Números<span class="c-form__check-info">(0-9)</span></li>
+          <li><input class="c-form__input" id="input-simbol" type="checkbox">Simbolos<span class="c-form__check-info">(@#!...)</span></li>
+        </ul>
+      </div>
+
+      <div class="c-button-content">
+        <button class="c-button c-button--create">Gerar senha</button>
+        <button class="c-button c-button--copy">Copiar senha</button>
+      </div>
+    </form>
+  </main>
 </body>
 </html>
 

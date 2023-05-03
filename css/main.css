@@ -3,10 +3,12 @@
 @import 'base/reset.css';
 
 /* LAYOUT */
-
+@import 'layout/layout.css';
 
 /* MODULE */
-
+@import 'module/c-logo.css';
+@import 'module/c-form.css';
+@import 'module/c-button.css';
 
 /* STATE */
 

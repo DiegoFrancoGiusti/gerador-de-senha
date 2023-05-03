@@ -1,0 +1,59 @@
+.c-form{
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0rem 1.6rem;
+}
+
+.c-form__content{
+  margin-bottom: 1rem;
+}
+
+.c-form__input{
+  margin-top: 0.8rem;
+  width: 100%;
+}
+
+.c-form__input[type = "text"]{
+  border-radius: 3px;
+  background-color: transparent;
+  border: 2px solid #0D2840;
+  padding: 0rem 0.8rem;
+  height: 3rem;
+}
+.c-form__input[type = "range"]{
+ -webkit-appearance: none;
+ border-radius: 10px;
+ box-shadow: inset 0 0 5px #0D2840;
+ background-color: transparent;
+ overflow: hidden;
+}
+
+.c-form__input[type = "range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #0D2840;
+  border: 4px solid #60A4BF;
+  box-shadow: -407px 0 0 400px #0D2840;
+}
+
+.c-form__input[type = "checkbox"]{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin:0 0.8rem;
+}
+
+.c-form__checkList{
+  margin-top: 0.8rem;
+}
+.c-form__checkList li{
+  margin-bottom: 0.4rem;
+}
+
+.c-form__check-info{
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
