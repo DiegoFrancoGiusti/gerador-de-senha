@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html{
+  font-family: 'Roboto Mono', monospace;
+}
+
+body{
+  min-height: 100vh;
+}
+
+h1{
+  font-weight: 500;
+  padding: 0px;
+  margin: 0px;
+}
