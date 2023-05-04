@@ -27,17 +27,17 @@
       </div>
       
       <div class="c-form__content">
-        <label class="c-form__input-info" for="passwordLength">Tamanho da senha: <span class="passLength">5</span> caracters</label>
+        <label class="c-form__input-info" for="passwordLength">Tamanho da senha: <span class="passLength">18</span> caracters</label>
         <input class="c-form__input" type="range" min="5" max="30" id="passwordLength" name="passwordLength">
       </div>
 
       <div class="c-form__content">
         <label class="c-form__input-info">A senha deve conter:</label>
         <ul class="c-form__checkList">
-          <li><input class="c-form__input" id="input-lowerCase" type="checkbox" checked>Minúsculas<span class="c-form__check-info">(a-z)</span></li>
-          <li><input class="c-form__input" id="input-upperCase" type="checkbox">Maíuscula<span class="c-form__check-info">(A-Z)</span></li>
-          <li><input class="c-form__input" id="input-number" type="checkbox">Números<span class="c-form__check-info">(0-9)</span></li>
-          <li><input class="c-form__input" id="input-simbol" type="checkbox">Simbolos<span class="c-form__check-info">(@#!...)</span></li>
+          <li><input class="c-form__input" value="0" id="input-lowerCase" type="checkbox" checked>Minúsculas<span class="c-form__check-info">(a-z)</span></li>
+          <li><input class="c-form__input" value="1" id="input-upperCase" type="checkbox">Maíuscula<span class="c-form__check-info">(A-Z)</span></li>
+          <li><input class="c-form__input" value="2" id="input-number" type="checkbox">Números<span class="c-form__check-info">(0-9)</span></li>
+          <li><input class="c-form__input" value="3" id="input-simbol" type="checkbox">Símbolos<span class="c-form__check-info">(@#!...)</span></li>
         </ul>
       </div>
 
@@ -47,6 +47,8 @@
       </div>
     </form>
   </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
 
