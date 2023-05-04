@@ -32,13 +32,36 @@
       </div>
 
       <div class="c-form__content">
-        <label class="c-form__input-info">A senha deve conter:</label>
-        <ul class="c-form__checkList">
-          <li><input class="c-form__input" value="0" id="input-lowerCase" type="checkbox" checked>Minúsculas<span class="c-form__check-info">(a-z)</span></li>
-          <li><input class="c-form__input" value="1" id="input-upperCase" type="checkbox">Maíuscula<span class="c-form__check-info">(A-Z)</span></li>
-          <li><input class="c-form__input" value="2" id="input-number" type="checkbox">Números<span class="c-form__check-info">(0-9)</span></li>
-          <li><input class="c-form__input" value="3" id="input-simbol" type="checkbox">Símbolos<span class="c-form__check-info">(@#!...)</span></li>
-        </ul>
+        <p>A senha deve conter:</p>
+        <div class="c-form__checkList">
+          <section>
+            <label class="c-form__check-info" for="inputCheckLowerCase">
+              <span>(a-z)</span>Minúsculas
+              <input class="c-form__input" value="0" id="inputCheckLowerCase" type="checkbox" checked>
+            </label>       
+          </section>
+                  
+          <section>
+            <label class="c-form__check-info" for="inputCheckUpperCase"> 
+              <span>(A-Z)</span>Maiúsculas
+              <input class="c-form__input" value="1" id="inputCheckUpperCase" type="checkbox">      
+            </label>
+          </section>
+
+          <section>
+            <label class="c-form__check-info" for="inputCheckNumber">
+              <span>(0-9)</span>Números
+              <input class="c-form__input" value="2" id="inputCheckNumber" type="checkbox">
+            </label>
+          </section>
+
+          <section>
+            <label class="c-form__check-info" for="inputCheckSymbol">
+              <span>(@#!...)</span>Símbolos 
+              <input class="c-form__input" value="3" id="inputCheckSymbol" type="checkbox">
+            </label>
+          </section>
+         </div>
       </div>
 
       <div class="c-button-content">

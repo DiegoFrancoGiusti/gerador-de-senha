@@ -47,12 +47,18 @@
 
 .c-form__checkList{
   margin-top: 0.8rem;
-}
-.c-form__checkList li{
-  margin-bottom: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
 }
 
-.c-form__check-info{
+.c-form__check-info {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.c-form__check-info span{
   font-size: 1.3rem;
   font-weight: 400;
 }
