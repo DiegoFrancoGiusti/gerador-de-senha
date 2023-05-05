@@ -1,100 +1,111 @@
 const form = document.querySelector('.c-form')
 const inputRange = document.querySelector('#passwordLength')
 const passLengthContent = document.querySelector('.passLength')
-const passwordMessage = document.createElement('p')
 const btnCopy = document.querySelector('.c-button--copy')
-
-const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
-const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const numbers = '0123456789'
-const symbols = `.+-[]*~_@#:?`
+const passwordMessage = document.createElement('p')
+const caracters = [
+  'abcdefghijklmnopqrstuvwxyz',
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  '0123456789',
+  `.+-[]*~_@#:?`
+]
 let passwordCaracters = ''
 let passwordLength = 18
 let password = ''
 
-inputRange.addEventListener('input',event => {
-  passwordLength = Number(event.target.value)
-
-  passLengthContent.textContent = passwordLength
-  
-  if(passwordLength <= 10){
-    passwordMessage.textContent = 'Senha fraca'
-    passwordMessage.style.color = '#e00707'
+const showPassworLengthMessage = (message,color) => {
+    passwordMessage.textContent = message
+    passwordMessage.style.color = color
     inputRange.insertAdjacentElement('afterend',passwordMessage)
+}
 
-    return
+const passwordLengthValidation = passwordLength => {
+  if(passwordLength <= 10){
+    showPassworLengthMessage('Senha fraca', '#e00707')
   } 
   
   if(passwordLength > 10 && passwordLength <= 18){
-    passwordMessage.textContent = 'Senha intermediária'
-    passwordMessage.style.color = '#ffa500'
-    inputRange.insertAdjacentElement('afterend',passwordMessage)
-
-    return
+    showPassworLengthMessage('Senha intermediária','#ffa500')
   }
 
   if(passwordLength > 18){
-    passwordMessage.textContent = 'Senha forte'
-    passwordMessage.style.color = '#008000'
-    inputRange.insertAdjacentElement('afterend',passwordMessage)
-
-    return
+    showPassworLengthMessage('Senha forte','#008000')
   }
-})
+}
 
+const getPasswordCaracters = () => {
+  let isInputChecked = null
 
+  for(let i = 1;i <= 4;i++){
+    isInputChecked = form[`inputCheck${i}`].checked
 
-form.addEventListener('submit',event => {
-  event.preventDefault()
-
-  if(event.target.inputCheckLowerCase.checked){
-    passwordCaracters += lowerLetters
+    if(isInputChecked){
+      passwordCaracters += caracters[form[`inputCheck${i}`].value]
+    }
   }
+}
 
-  if(event.target.inputCheckUpperCase.checked){
-    passwordCaracters += upperLetters
-  }
-
-  if(event.target.inputCheckNumber.checked){
-    passwordCaracters += numbers
-  }
-
-  if(event.target.inputCheckSymbol.checked){
-    passwordCaracters += symbols
-  }
-
+const generatePassword = () => {
   if(passwordCaracters.length !== 0){
     for(let i = 1;i <= passwordLength;i++){
-      const x = passwordCaracters.length -1
-      const index = Math.round(Math.random() * x)
+      const passwordCaractersLength = passwordCaracters.length -1
+      const index = Math.round(Math.random() * passwordCaractersLength)
 
       password += passwordCaracters[index]
     }
   }
+}
 
+const clearMessageContent = () => {
+  setTimeout(() => {
+    passwordMessage.textContent = ''
+  },1800)
+}
+
+const insertMessage = (menssage,position) => {
+  passwordMessage.textContent = menssage
+  passwordMessage.style.color = ''
+  form.insertAdjacentElement(position,passwordMessage)
+  
+  clearMessageContent()
+}
+
+const showSelectOptionsMenssage = () => {
   if(passwordCaracters.length === 0){
-    passwordMessage.textContent = 'Selecione uma das opções'
-    form.insertAdjacentElement('beforebegin',passwordMessage)
-
-    setTimeout(() => {
-      passwordMessage.textContent = ''
-    },1800)
+    insertMessage('Selecione uma das opções','beforebegin')
   }
+}
 
-  event.target.generatedPass.placeholder = password
+const showCopyPasswordMessage = () => {
+  if(form.generatedPass.placeholder !== ''){
+    navigator.clipboard.writeText(form.generatedPass.placeholder)
+    insertMessage('Senha copiada :)','afterend')
+  }
+}
+
+const showPassword = () => {
+  form.generatedPass.placeholder = password
+
   password = ''
   passwordCaracters = ''
+}
+
+inputRange.addEventListener('input', event => {
+  passwordLength = Number(event.target.value)
+  passLengthContent.textContent = passwordLength
+
+  passwordLengthValidation(passwordLength)
+})
+
+form.addEventListener('submit',event => {
+  event.preventDefault()
+  getPasswordCaracters()
+  generatePassword()
+  showSelectOptionsMenssage()
+  showPassword()
 })
 
 btnCopy.addEventListener('click', event =>{
   event.preventDefault()
-  if(form.generatedPass.placeholder !== ''){
-    navigator.clipboard.writeText(form.generatedPass.placeholder)
-    passwordMessage.textContent = 'Senha copiada :)'
-    form.insertAdjacentElement('afterend',passwordMessage)
-
-    setTimeout(() => {
-      passwordMessage.textContent = ''
-    },1400)
-  }
+  showCopyPasswordMessage()
 })
