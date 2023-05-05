@@ -11,7 +11,7 @@ Essa aplicação procura gerar senhas aleatórias como base nas opções escolhi
 
 A aplicação foi desenvolvida utilizando HTML, CSS e JavaScript.
 
-###**Interface do site**
+### **Interface do site**
 ![Imagem do site](img/Captura%20da%20Web_5-5-2023_20361_127.0.0.1.jpeg)
 
 
